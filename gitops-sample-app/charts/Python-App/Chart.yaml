@@ -1,5 +1,5 @@
 apiVersion: v2
-name: Helm Chart for Gitops App
+name: helm_chart_for_Gitops_Deployment
 description: Helm Chart for Gitops App
 version: 1.0.0
 appVersion: 1.0.0
