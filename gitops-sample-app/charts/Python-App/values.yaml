@@ -13,6 +13,7 @@ ingress:
     nginx.ingress.kubernetes.io/rewrite-target: "/"
   enabled: true
 replicaCount: 1
+replica: "2"
 service:
   port: 80
   type: "ClusterIP"
