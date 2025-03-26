@@ -1,3 +1,4 @@
+replicaCount: 1
 image:
   tag: 9
   repository: "krishi0408/python-helm-native-canary-blue"
