@@ -1,5 +1,5 @@
 apiVersion: v2
-name: helm_chart_for_gitops_deployment
+name: gitops-sample-application
 description: Helm Chart for Gitops App
 version: 1.0.0
 appVersion: 1.0.0
