@@ -1,3 +1,4 @@
+replicaCount: 1
 image:
   tag: 9
   repository: "krishi0408/python-helm-native-canary-blue"
@@ -12,7 +13,6 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: "/"
   enabled: true
-replicaCount: 2
 service:
   port: 80
   type: "ClusterIP"
