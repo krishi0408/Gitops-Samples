@@ -1,5 +1,4 @@
 appVersion: "1.0.0"
-replicaCount: "3"
 apiVersion: "v2"
 name: "gitops-sample-application"
 description: "Helm Chart for Gitops App"
