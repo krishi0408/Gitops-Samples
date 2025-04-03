@@ -1,0 +1,4 @@
+{
+  "environment": "Gitops_PR_Env",
+  "replicas": "2"
+}
