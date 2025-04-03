@@ -23,6 +23,7 @@ spec:
             cluster_name: in-cluster  # Same cluster for all
             harness_service: service_gitops_pr  # Same Harness service for all
             environment: {{ environment }}
+            replicas: {{ replicas }}
       destination:
         server: "https://kubernetes.default.svc"  # Same cluster for all
         namespace: '{{ environment }}'  # Namespace changes dynamically
