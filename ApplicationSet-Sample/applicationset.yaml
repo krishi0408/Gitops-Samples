@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: multi-env-appset
+  name: appset
 spec:
   generators:
     - git:
@@ -11,25 +11,22 @@ spec:
           - path: ApplicationSet-Sample/cluster-config/*/config.json
   template:
     metadata:
-      name: guestbook-{{ environment }}  # Creates app like guestbook-Gitops_Dev_Env
+      name: 'guestbook-{{ environment }}'
+      labels:
+        harness.io/serviceRef: '{{ harness_service }}'
+        harness.io/envRef: '{{ environment }}'
     spec:
       project: default
       source:
         repoURL: https://github.com/krishi0408/Gitops-Samples.git
         targetRevision: main
-        path: ApplicationSet-Sample/apps/guestbook  # Uses guestbook app manifests
-        helm:
-          values: |
-            cluster_name: in-cluster  # Same cluster for all
-            harness_service: service_gitops_pr  # Same Harness service for all
-            environment: {{ environment }}
-            replicas: {{ replicas }}
+        path: ApplicationSet-Sample/apps/guestbook  
+        kustomize:
+          replicas: '{{ replicas }}'
       destination:
-        server: "https://kubernetes.default.svc"  # Same cluster for all
-        namespace: '{{ environment }}'  # Namespace changes dynamically
+        server: "https://kubernetes.default.svc"
+        namespace: "argocd" 
       syncPolicy:
         syncOptions:
-          - CreateNamespace=true
-  syncPolicy:
-    syncOptions:
-      - ApplyOutOfSyncOnly=true
+        - PruneLast=true
+        - ApplyOutOfSyncOnly=true
