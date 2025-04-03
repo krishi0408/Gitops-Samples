@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: 'guestbook-{{ environment }}'
+  name: appset
 spec:
   generators:
-    - git:
-        repoURL: https://github.com/krishi0408/Gitops-Samples.git
-        revision: main
-        files:
-          - path: ApplicationSet-Sample/cluster-config/*/config.json
+  - git:
+      repoURL: https://github.com/krishi0408/Gitops-Samples.git
+      revision: main
+      files:
+      - path: ApplicationSet-Sample/cluster-config/*/config.json
   template:
     metadata:
-      name: 'guestbook-{{ environment }}'
+      name: 'guestbook-{{environment}'
       labels:
-        harness.io/serviceRef: '{{ harness_service }}'
-        harness.io/envRef: '{{ environment }}'
+        harness.io/serviceRef: '{{harness_service}}'
+        harness.io/envRef: '{{environment}}'
     spec:
       project: default
       source:
@@ -22,11 +22,13 @@ spec:
         targetRevision: main
         path: ApplicationSet-Sample/apps/guestbook  
         kustomize:
-          replicas: '{{ replicas }}'
+          replicas: '{{replicas}}'
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "argocd" 
       syncPolicy:
+        automated:
+          selfHeal: true
         syncOptions:
         - PruneLast=true
         - ApplyOutOfSyncOnly=true
