@@ -3,5 +3,5 @@
   "harness_service" : "service_gitops_pr",
   "environment" : "dev",
   "server_address" : "https://kubernetes.default.svc",
-  "replicas" : "3"
+  "replicas" : "1"
 }
