@@ -1,0 +1,4 @@
+{
+  "environment": "prod1",
+  "replicas": "3"
+}
