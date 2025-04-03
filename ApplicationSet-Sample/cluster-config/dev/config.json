@@ -1,7 +1,7 @@
 {
     "cluster_name" : "in-cluster",
     "harness_service" : "service_gitops_pr",
-    "environment" : "Gitops_PR_Env",
+    "environment" : "dev-gitops-sample",
     "server_address" : "https://kubernetes.default.svc",
     "replicas" : "1"
 }
