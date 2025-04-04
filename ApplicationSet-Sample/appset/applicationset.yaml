@@ -11,7 +11,7 @@ spec:
       - path: ApplicationSet-Sample/cluster-config/*/config.json
   template:
     metadata:
-      name: 'guestbook-{{environment}'
+      name: 'guestbook-{{environment}}'
       labels:
         harness.io/serviceRef: '{{harness_service}}'
         harness.io/envRef: '{{environment}}'
