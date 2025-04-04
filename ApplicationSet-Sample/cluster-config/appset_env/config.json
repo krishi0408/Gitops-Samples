@@ -1,7 +1,0 @@
-{
-  "cluster_name": "in-cluster",
-  "environment": "appset_env",
-  "harness_service": "service_gitops_pr",
-  "replicas": "3",
-  "server_address": "https://kubernetes.default.svc"
-}
