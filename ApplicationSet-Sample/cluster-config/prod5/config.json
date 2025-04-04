@@ -1,7 +1,7 @@
 {
-  "cluster_name": "in-cluster",
-  "environment": "prod5",
-  "harness_service": "service_gitops_pr",
-  "replicas": "3",
-  "server_address": "https://kubernetes.default.svc"
+  "cluster_name" : "in-cluster",
+  "environment" : "prod5",
+  "harness_service" : "service_gitops_pr",
+  "server_address" : "https://kubernetes.default.svc",
+  "replicas" : "3"
 }
