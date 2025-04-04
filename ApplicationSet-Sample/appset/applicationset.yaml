@@ -33,4 +33,4 @@ spec:
           selfHeal: true
         syncOptions:
         - PruneLast=true
-        - ApplyOutOfSyncOnly=true
+        - ApplyOutOfSyncOnly=false
