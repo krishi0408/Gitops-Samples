@@ -22,7 +22,7 @@ spec:
         targetRevision: main
         path: ApplicationSet-Sample/apps/guestbook  
         kustomize:
-          replicas: '{{replicas}}'
+          replicas: 1
       destination:
         server: "https://kubernetes.default.svc"
         namespace: "argocd" 
